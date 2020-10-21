@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tengchao.codegenerator.core.mapper.GlobalConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.tengchao.codegenerator.core.entity.GlobalConfigEntity">
+        <id column="id" property="id" />
+        <result column="outputDir" property="outputDir" />
+        <result column="fileOverride" property="fileOverride" />
+        <result column="open" property="open" />
+        <result column="enableCache" property="enableCache" />
+        <result column="author" property="author" />
+        <result column="kotlin" property="kotlin" />
+        <result column="swagger2" property="swagger2" />
+        <result column="activeRecord" property="activeRecord" />
+        <result column="baseResultMap" property="baseResultMap" />
+        <result column="dateType" property="dateType" />
+        <result column="baseColumnList" property="baseColumnList" />
+        <result column="entityName" property="entityName" />
+        <result column="mapperName" property="mapperName" />
+        <result column="xmlName" property="xmlName" />
+        <result column="serviceName" property="serviceName" />
+        <result column="serviceImplName" property="serviceImplName" />
+        <result column="controllerName" property="controllerName" />
+        <result column="idType" property="idType" />
+        <result column="createAt" property="createAt" />
+        <result column="updateAt" property="updateAt" />
+        <result column="version" property="version" />
+        <result column="isDeleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, outputDir, fileOverride, open, enableCache, author, kotlin, swagger2, activeRecord, baseResultMap, dateType, baseColumnList, entityName, mapperName, xmlName, serviceName, serviceImplName, controllerName, idType, createAt, updateAt, version, isDeleted
+    </sql>
+
+</mapper>

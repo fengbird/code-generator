@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tengchao.codegenerator.core.mapper.DataSourceConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.tengchao.codegenerator.core.entity.DataSourceConfigEntity">
+        <id column="id" property="id" />
+        <result column="dbType" property="dbType" />
+        <result column="schemaName" property="schemaName" />
+        <result column="url" property="url" />
+        <result column="driverName" property="driverName" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="createAt" property="createAt" />
+        <result column="updateAt" property="updateAt" />
+        <result column="version" property="version" />
+        <result column="isDeleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, dbType, schemaName, url, driverName, username, password, createAt, updateAt, version, isDeleted
+    </sql>
+
+</mapper>

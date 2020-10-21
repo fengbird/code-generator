@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tengchao.codegenerator.core.mapper.StrategyConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.tengchao.codegenerator.core.entity.StrategyConfigEntity">
+        <id column="id" property="id" />
+        <result column="isCapitalMode" property="isCapitalMode" />
+        <result column="skipView" property="skipView" />
+        <result column="naming" property="naming" />
+        <result column="columnNaming" property="columnNaming" />
+        <result column="tablePrefix" property="tablePrefix" />
+        <result column="fieldPrefix" property="fieldPrefix" />
+        <result column="superEntityClass" property="superEntityClass" />
+        <result column="superEntityColumns" property="superEntityColumns" />
+        <result column="superMapperClass" property="superMapperClass" />
+        <result column="superServiceClass" property="superServiceClass" />
+        <result column="superServiceImplClass" property="superServiceImplClass" />
+        <result column="superControllerClass" property="superControllerClass" />
+        <result column="include" property="include" />
+        <result column="exclude" property="exclude" />
+        <result column="entitySerialVersionUID" property="entitySerialVersionUID" />
+        <result column="entityColumnConstant" property="entityColumnConstant" />
+        <result column="entityBuilderModel" property="entityBuilderModel" />
+        <result column="entityLombokModel" property="entityLombokModel" />
+        <result column="entityBooleanColumnRemoveIsPrefix" property="entityBooleanColumnRemoveIsPrefix" />
+        <result column="restControllerStyle" property="restControllerStyle" />
+        <result column="controllerMappingHyphenStyle" property="controllerMappingHyphenStyle" />
+        <result column="entityTableFieldAnnotationEnable" property="entityTableFieldAnnotationEnable" />
+        <result column="versionFieldName" property="versionFieldName" />
+        <result column="logicDeleteFieldName" property="logicDeleteFieldName" />
+        <result column="tableFillList" property="tableFillList" />
+        <result column="enableSqlFilter" property="enableSqlFilter" />
+        <result column="likeTable" property="likeTable" />
+        <result column="notLikeTable" property="notLikeTable" />
+        <result column="isCapitalModeNaming" property="isCapitalModeNaming" />
+        <result column="createAt" property="createAt" />
+        <result column="updateAt" property="updateAt" />
+        <result column="version" property="version" />
+        <result column="isDeleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, isCapitalMode, skipView, naming, columnNaming, tablePrefix, fieldPrefix, superEntityClass, superEntityColumns, superMapperClass, superServiceClass, superServiceImplClass, superControllerClass, include, exclude, entitySerialVersionUID, entityColumnConstant, entityBuilderModel, entityLombokModel, entityBooleanColumnRemoveIsPrefix, restControllerStyle, controllerMappingHyphenStyle, entityTableFieldAnnotationEnable, versionFieldName, logicDeleteFieldName, tableFillList, enableSqlFilter, likeTable, notLikeTable, isCapitalModeNaming, createAt, updateAt, version, isDeleted
+    </sql>
+
+</mapper>

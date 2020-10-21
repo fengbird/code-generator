@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: code-generator
+  jackson:
+    locale: zh_CN
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+    deserialization:
+      FAIL_ON_NUMBERS_FOR_ENUMS: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    sql-script-encoding: UTF-8
+    name: hikariCP
+    hikari:
+      pool-name: Retail_HikariCP
+      minimum-idle: 5 #最小空闲连接数量
+      maximum-pool-size: 32
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 3000
+      validation-timeout: 2000
+      idle-timeout: 60000
+      max-lifetime: 1800000
+      connection-init-sql: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;"
+      data-source-properties:
+        serverTimezone: GMT+8
+        useTimezone: true
+        zeroDateTimeBehavior: round
+        characterEncoding: utf8
+        cachePrepStmts: true
+        prepStmtCacheSize: 128
+        prepStmtCacheSqlLimit: 1024
+        useSSL: false
+        useUnicode: true
+server:
+  tomcat:
+    max-connections: 20000
+    accesslog:
+      enabled: true
+      pattern: "%h %l %u %t %r %s %b %D"
+mybatis-plus:
+  mapper-locations: classpath*:db/mysql/mapper/**/*.xml
