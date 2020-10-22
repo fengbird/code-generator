@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.Version;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -16,6 +19,7 @@ import java.io.Serializable;
  * @since 2020-10-21
  */
 @TableName("strategy_config")
+@Data
 public class StrategyConfigEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,16 +28,22 @@ public class StrategyConfigEntity implements Serializable {
     private Integer id;
 
     /**
+     * 策略配置名
+     */
+    @TableField("strategyConfigname")
+    private String strategyConfigname;
+
+    /**
      * 是否大写命名
      */
     @TableField("isCapitalMode")
-    private Integer isCapitalMode;
+    private Boolean capitalMode;
 
     /**
      * 是否跳过视图
      */
     @TableField("skipView")
-    private Integer skipView;
+    private Boolean skipView;
 
     /**
      * 名称转换
@@ -108,49 +118,49 @@ public class StrategyConfigEntity implements Serializable {
      * 实体是否生成 serialVersionUID
      */
     @TableField("entitySerialVersionUID")
-    private Integer entitySerialVersionUID;
+    private Boolean entitySerialVersionUID;
 
     /**
      * 【实体】是否生成字段常量
      */
     @TableField("entityColumnConstant")
-    private Integer entityColumnConstant;
+    private Boolean entityColumnConstant;
 
     /**
      * 【实体】是否为构建者模型
      */
     @TableField("entityBuilderModel")
-    private Integer entityBuilderModel;
+    private Boolean entityBuilderModel;
 
     /**
      * 【实体】是否为lombok模型
      */
     @TableField("entityLombokModel")
-    private Integer entityLombokModel;
+    private Boolean entityLombokModel;
 
     /**
      * Boolean类型字段是否移除is前缀
      */
     @TableField("entityBooleanColumnRemoveIsPrefix")
-    private Integer entityBooleanColumnRemoveIsPrefix;
+    private Boolean entityBooleanColumnRemoveIsPrefix;
 
     /**
      * 生成 @RestController
      */
     @TableField("restControllerStyle")
-    private Integer restControllerStyle;
+    private Boolean restControllerStyle;
 
     /**
      * 驼峰转连字符
      */
     @TableField("controllerMappingHyphenStyle")
-    private Integer controllerMappingHyphenStyle;
+    private Boolean controllerMappingHyphenStyle;
 
     /**
      * 是否生成实体时，生成字段注解
      */
     @TableField("entityTableFieldAnnotationEnable")
-    private Integer entityTableFieldAnnotationEnable;
+    private Boolean entityTableFieldAnnotationEnable;
 
     /**
      * 乐观锁属性名称
@@ -174,7 +184,7 @@ public class StrategyConfigEntity implements Serializable {
      * 启用sql过滤
      */
     @TableField("enableSqlFilter")
-    private Integer enableSqlFilter;
+    private Boolean enableSqlFilter;
 
     /**
      * 包含表名
@@ -200,251 +210,16 @@ public class StrategyConfigEntity implements Serializable {
     @TableField("updateAt")
     private LocalDateTime updateAt;
 
+    @Version
     private Integer version;
 
     @TableField("isDeleted")
-    private Integer isDeleted;
+    private Boolean deleted;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public Integer getIsCapitalMode() {
-        return isCapitalMode;
-    }
-
-    public void setIsCapitalMode(Integer isCapitalMode) {
-        this.isCapitalMode = isCapitalMode;
-    }
-    public Integer getSkipView() {
-        return skipView;
-    }
-
-    public void setSkipView(Integer skipView) {
-        this.skipView = skipView;
-    }
-    public String getNaming() {
-        return naming;
-    }
-
-    public void setNaming(String naming) {
-        this.naming = naming;
-    }
-    public String getColumnNaming() {
-        return columnNaming;
-    }
-
-    public void setColumnNaming(String columnNaming) {
-        this.columnNaming = columnNaming;
-    }
-    public String getTablePrefix() {
-        return tablePrefix;
-    }
-
-    public void setTablePrefix(String tablePrefix) {
-        this.tablePrefix = tablePrefix;
-    }
-    public String getFieldPrefix() {
-        return fieldPrefix;
-    }
-
-    public void setFieldPrefix(String fieldPrefix) {
-        this.fieldPrefix = fieldPrefix;
-    }
-    public String getSuperEntityClass() {
-        return superEntityClass;
-    }
-
-    public void setSuperEntityClass(String superEntityClass) {
-        this.superEntityClass = superEntityClass;
-    }
-    public String getSuperEntityColumns() {
-        return superEntityColumns;
-    }
-
-    public void setSuperEntityColumns(String superEntityColumns) {
-        this.superEntityColumns = superEntityColumns;
-    }
-    public String getSuperMapperClass() {
-        return superMapperClass;
-    }
-
-    public void setSuperMapperClass(String superMapperClass) {
-        this.superMapperClass = superMapperClass;
-    }
-    public String getSuperServiceClass() {
-        return superServiceClass;
-    }
-
-    public void setSuperServiceClass(String superServiceClass) {
-        this.superServiceClass = superServiceClass;
-    }
-    public String getSuperServiceImplClass() {
-        return superServiceImplClass;
-    }
-
-    public void setSuperServiceImplClass(String superServiceImplClass) {
-        this.superServiceImplClass = superServiceImplClass;
-    }
-    public String getSuperControllerClass() {
-        return superControllerClass;
-    }
-
-    public void setSuperControllerClass(String superControllerClass) {
-        this.superControllerClass = superControllerClass;
-    }
-    public String getInclude() {
-        return include;
-    }
-
-    public void setInclude(String include) {
-        this.include = include;
-    }
-    public String getExclude() {
-        return exclude;
-    }
-
-    public void setExclude(String exclude) {
-        this.exclude = exclude;
-    }
-    public Integer getEntitySerialVersionUID() {
-        return entitySerialVersionUID;
-    }
-
-    public void setEntitySerialVersionUID(Integer entitySerialVersionUID) {
-        this.entitySerialVersionUID = entitySerialVersionUID;
-    }
-    public Integer getEntityColumnConstant() {
-        return entityColumnConstant;
-    }
-
-    public void setEntityColumnConstant(Integer entityColumnConstant) {
-        this.entityColumnConstant = entityColumnConstant;
-    }
-    public Integer getEntityBuilderModel() {
-        return entityBuilderModel;
-    }
-
-    public void setEntityBuilderModel(Integer entityBuilderModel) {
-        this.entityBuilderModel = entityBuilderModel;
-    }
-    public Integer getEntityLombokModel() {
-        return entityLombokModel;
-    }
-
-    public void setEntityLombokModel(Integer entityLombokModel) {
-        this.entityLombokModel = entityLombokModel;
-    }
-    public Integer getEntityBooleanColumnRemoveIsPrefix() {
-        return entityBooleanColumnRemoveIsPrefix;
-    }
-
-    public void setEntityBooleanColumnRemoveIsPrefix(Integer entityBooleanColumnRemoveIsPrefix) {
-        this.entityBooleanColumnRemoveIsPrefix = entityBooleanColumnRemoveIsPrefix;
-    }
-    public Integer getRestControllerStyle() {
-        return restControllerStyle;
-    }
-
-    public void setRestControllerStyle(Integer restControllerStyle) {
-        this.restControllerStyle = restControllerStyle;
-    }
-    public Integer getControllerMappingHyphenStyle() {
-        return controllerMappingHyphenStyle;
-    }
-
-    public void setControllerMappingHyphenStyle(Integer controllerMappingHyphenStyle) {
-        this.controllerMappingHyphenStyle = controllerMappingHyphenStyle;
-    }
-    public Integer getEntityTableFieldAnnotationEnable() {
-        return entityTableFieldAnnotationEnable;
-    }
-
-    public void setEntityTableFieldAnnotationEnable(Integer entityTableFieldAnnotationEnable) {
-        this.entityTableFieldAnnotationEnable = entityTableFieldAnnotationEnable;
-    }
-    public String getVersionFieldName() {
-        return versionFieldName;
-    }
-
-    public void setVersionFieldName(String versionFieldName) {
-        this.versionFieldName = versionFieldName;
-    }
-    public String getLogicDeleteFieldName() {
-        return logicDeleteFieldName;
-    }
-
-    public void setLogicDeleteFieldName(String logicDeleteFieldName) {
-        this.logicDeleteFieldName = logicDeleteFieldName;
-    }
-    public String getTableFillList() {
-        return tableFillList;
-    }
-
-    public void setTableFillList(String tableFillList) {
-        this.tableFillList = tableFillList;
-    }
-    public Integer getEnableSqlFilter() {
-        return enableSqlFilter;
-    }
-
-    public void setEnableSqlFilter(Integer enableSqlFilter) {
-        this.enableSqlFilter = enableSqlFilter;
-    }
-    public String getLikeTable() {
-        return likeTable;
-    }
-
-    public void setLikeTable(String likeTable) {
-        this.likeTable = likeTable;
-    }
-    public String getNotLikeTable() {
-        return notLikeTable;
-    }
-
-    public void setNotLikeTable(String notLikeTable) {
-        this.notLikeTable = notLikeTable;
-    }
-    public String getIsCapitalModeNaming() {
-        return isCapitalModeNaming;
-    }
-
-    public void setIsCapitalModeNaming(String isCapitalModeNaming) {
-        this.isCapitalModeNaming = isCapitalModeNaming;
-    }
-    public LocalDateTime getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
-    }
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
-    }
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
-    }
 
     public static final String ID = "id";
+
+    public static final String STRATEGYCONFIGNAME = "strategyConfigname";
 
     public static final String ISCAPITALMODE = "isCapitalMode";
 
@@ -512,43 +287,4 @@ public class StrategyConfigEntity implements Serializable {
 
     public static final String ISDELETED = "isDeleted";
 
-    @Override
-    public String toString() {
-        return "StrategyConfigEntity{" +
-            "id=" + id +
-            ", isCapitalMode=" + isCapitalMode +
-            ", skipView=" + skipView +
-            ", naming=" + naming +
-            ", columnNaming=" + columnNaming +
-            ", tablePrefix=" + tablePrefix +
-            ", fieldPrefix=" + fieldPrefix +
-            ", superEntityClass=" + superEntityClass +
-            ", superEntityColumns=" + superEntityColumns +
-            ", superMapperClass=" + superMapperClass +
-            ", superServiceClass=" + superServiceClass +
-            ", superServiceImplClass=" + superServiceImplClass +
-            ", superControllerClass=" + superControllerClass +
-            ", include=" + include +
-            ", exclude=" + exclude +
-            ", entitySerialVersionUID=" + entitySerialVersionUID +
-            ", entityColumnConstant=" + entityColumnConstant +
-            ", entityBuilderModel=" + entityBuilderModel +
-            ", entityLombokModel=" + entityLombokModel +
-            ", entityBooleanColumnRemoveIsPrefix=" + entityBooleanColumnRemoveIsPrefix +
-            ", restControllerStyle=" + restControllerStyle +
-            ", controllerMappingHyphenStyle=" + controllerMappingHyphenStyle +
-            ", entityTableFieldAnnotationEnable=" + entityTableFieldAnnotationEnable +
-            ", versionFieldName=" + versionFieldName +
-            ", logicDeleteFieldName=" + logicDeleteFieldName +
-            ", tableFillList=" + tableFillList +
-            ", enableSqlFilter=" + enableSqlFilter +
-            ", likeTable=" + likeTable +
-            ", notLikeTable=" + notLikeTable +
-            ", isCapitalModeNaming=" + isCapitalModeNaming +
-            ", createAt=" + createAt +
-            ", updateAt=" + updateAt +
-            ", version=" + version +
-            ", isDeleted=" + isDeleted +
-        "}";
-    }
 }

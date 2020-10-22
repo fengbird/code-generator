@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-10-21
  */
 public interface GlobalConfigService extends IService<GlobalConfigEntity> {
-
+    int deleteById(Integer id);
 }

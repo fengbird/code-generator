@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.Version;
+
 import java.io.Serializable;
 
 /**
@@ -22,6 +24,9 @@ public class PackageConfigEntity implements Serializable {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
+
+    @TableField("packageConfigName")
+    private String packageConfigName;
 
     /**
      * 父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
@@ -71,10 +76,11 @@ public class PackageConfigEntity implements Serializable {
     @TableField("updateAt")
     private LocalDateTime updateAt;
 
+    @Version
     private Integer version;
 
     @TableField("isDeleted")
-    private Integer isDeleted;
+    private Boolean deleted;
 
     public Integer getId() {
         return id;
@@ -82,6 +88,13 @@ public class PackageConfigEntity implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    public String getPackageConfigName() {
+        return packageConfigName;
+    }
+
+    public void setPackageConfigName(String packageConfigName) {
+        this.packageConfigName = packageConfigName;
     }
     public String getParent() {
         return parent;
@@ -160,15 +173,17 @@ public class PackageConfigEntity implements Serializable {
     public void setVersion(Integer version) {
         this.version = version;
     }
-    public Integer getIsDeleted() {
-        return isDeleted;
+    public Boolean getDeleted() {
+        return deleted;
     }
 
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 
     public static final String ID = "id";
+
+    public static final String PACKAGECONFIGNAME = "packageConfigName";
 
     public static final String PARENT = "parent";
 
@@ -198,6 +213,7 @@ public class PackageConfigEntity implements Serializable {
     public String toString() {
         return "PackageConfigEntity{" +
             "id=" + id +
+            ", packageConfigName=" + packageConfigName +
             ", parent=" + parent +
             ", moduleName=" + moduleName +
             ", entity=" + entity +
@@ -209,7 +225,7 @@ public class PackageConfigEntity implements Serializable {
             ", createAt=" + createAt +
             ", updateAt=" + updateAt +
             ", version=" + version +
-            ", isDeleted=" + isDeleted +
+            ", deleted=" + deleted +
         "}";
     }
 }

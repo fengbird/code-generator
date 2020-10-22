@@ -5,6 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.tengchao.codegenerator.core.entity.DataSourceConfigEntity">
         <id column="id" property="id" />
+        <result column="dataSourceConfigName" property="dataSourceConfigName" />
         <result column="dbType" property="dbType" />
         <result column="schemaName" property="schemaName" />
         <result column="url" property="url" />
@@ -14,12 +15,12 @@
         <result column="createAt" property="createAt" />
         <result column="updateAt" property="updateAt" />
         <result column="version" property="version" />
-        <result column="isDeleted" property="isDeleted" />
+        <result column="isDeleted" property="deleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, dbType, schemaName, url, driverName, username, password, createAt, updateAt, version, isDeleted
+        id, dataSourceConfigName, dbType, schemaName, url, driverName, username, password, createAt, updateAt, version, isDeleted
     </sql>
 
 </mapper>

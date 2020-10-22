@@ -29,7 +29,7 @@ public class MysqlGenerator {
         AutoGenerator mpg = new AutoGenerator().setGlobalConfig(
                 // 全局配置
                 new GlobalConfig()
-                    .setOutputDir("/Users/zhaotengchao/IdeaProjects/code-generator/src/main/java")//输出目录
+                    .setOutputDir("/Users/zhaotengchao/IdeaProjects/code-generator/mygenerator")//输出目录
                     .setFileOverride(true)// 是否覆盖文件
                     .setActiveRecord(false)// 开启 activeRecord 模式
                     .setEnableCache(false)// XML 二级缓存
@@ -83,7 +83,7 @@ public class MysqlGenerator {
                         // .setDbColumnUnderline(true)//全局下划线命名
                         //.setTablePrefix("tbl_")// 此处可以修改为您的表前缀
                         .setNaming(NamingStrategy.underline_to_camel)// 表名生成策略
-                         .setInclude("data_source_config","global_config","package_config","strategy_config") // 需要生成的表
+                         .setInclude("summary_config") // 需要生成的表
                         // .setExclude(new String[]{"test"}) // 排除生成的表
                         // 自定义实体父类
                         // .setSuperEntityClass("com.baomidou.demo.TestEntity")

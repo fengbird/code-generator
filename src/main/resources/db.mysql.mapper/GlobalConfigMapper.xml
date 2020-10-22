@@ -5,6 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.tengchao.codegenerator.core.entity.GlobalConfigEntity">
         <id column="id" property="id" />
+        <result column="globalConfigName" property="globalConfigName" />
         <result column="outputDir" property="outputDir" />
         <result column="fileOverride" property="fileOverride" />
         <result column="open" property="open" />
@@ -26,12 +27,12 @@
         <result column="createAt" property="createAt" />
         <result column="updateAt" property="updateAt" />
         <result column="version" property="version" />
-        <result column="isDeleted" property="isDeleted" />
+        <result column="isDeleted" property="deleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, outputDir, fileOverride, open, enableCache, author, kotlin, swagger2, activeRecord, baseResultMap, dateType, baseColumnList, entityName, mapperName, xmlName, serviceName, serviceImplName, controllerName, idType, createAt, updateAt, version, isDeleted
+        id, globalConfigName, outputDir, fileOverride, open, enableCache, author, kotlin, swagger2, activeRecord, baseResultMap, dateType, baseColumnList, entityName, mapperName, xmlName, serviceName, serviceImplName, controllerName, idType, createAt, updateAt, version, isDeleted
     </sql>
 
 </mapper>

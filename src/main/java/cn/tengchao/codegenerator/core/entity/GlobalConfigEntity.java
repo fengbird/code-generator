@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.Version;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -16,12 +19,16 @@ import java.io.Serializable;
  * @since 2020-10-21
  */
 @TableName("global_config")
+@Data
 public class GlobalConfigEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
+
+    @TableField("globalConfigName")
+    private String globalConfigName;
 
     /**
      * 生成文件的输出目录【默认 D 盘根目录】
@@ -33,18 +40,18 @@ public class GlobalConfigEntity implements Serializable {
      * 是否覆盖已有文件
      */
     @TableField("fileOverride")
-    private Integer fileOverride;
+    private Boolean fileOverride;
 
     /**
      * 是否打开输出目录
      */
-    private Integer open;
+    private Boolean open;
 
     /**
      * 是否在xml中添加二级缓存配置
      */
     @TableField("enableCache")
-    private Integer enableCache;
+    private Boolean enableCache;
 
     /**
      * 开发人员
@@ -54,24 +61,24 @@ public class GlobalConfigEntity implements Serializable {
     /**
      * 开启 Kotlin 模式
      */
-    private Integer kotlin;
+    private Boolean kotlin;
 
     /**
      * 开启 swagger2 模式
      */
-    private Integer swagger2;
+    private Boolean swagger2;
 
     /**
      * 开启 ActiveRecord 模式
      */
     @TableField("activeRecord")
-    private Integer activeRecord;
+    private Boolean activeRecord;
 
     /**
      * 开启 BaseResultMap
      */
     @TableField("baseResultMap")
-    private Integer baseResultMap;
+    private Boolean baseResultMap;
 
     /**
      * 时间类型对应策略, ONLY_DATE: 只使用 java.util.date 代替  SQL_PACK：使用 java.sql 包下的。 TIME_PACK：使用 java.time 包下的java8 新的时间类型
@@ -83,7 +90,7 @@ public class GlobalConfigEntity implements Serializable {
      * 开启 baseColumnList
      */
     @TableField("baseColumnList")
-    private Integer baseColumnList;
+    private Boolean baseColumnList;
 
     /**
      * entity层文件名称方式，例如： %sAction 生成 UserAction
@@ -125,7 +132,7 @@ public class GlobalConfigEntity implements Serializable {
      * 指定生成的主键的ID类型,0:数据库ID自增 1: 该类型为未设置主键类型(注解里等于跟随全局,全局里约等于 INPUT) 2: 用户输入ID，该类型可以通过自己注册自动填充插件进行填充。3: 分配ID (主键类型为number或string），默认实现为雪花算法。4: 分配去除-号的UUID
      */
     @TableField("idType")
-    private Integer idType;
+    private String idType;
 
     @TableField("createAt")
     private LocalDateTime createAt;
@@ -133,174 +140,15 @@ public class GlobalConfigEntity implements Serializable {
     @TableField("updateAt")
     private LocalDateTime updateAt;
 
+    @Version
     private Integer version;
 
     @TableField("isDeleted")
-    private Integer isDeleted;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public String getOutputDir() {
-        return outputDir;
-    }
-
-    public void setOutputDir(String outputDir) {
-        this.outputDir = outputDir;
-    }
-    public Integer getFileOverride() {
-        return fileOverride;
-    }
-
-    public void setFileOverride(Integer fileOverride) {
-        this.fileOverride = fileOverride;
-    }
-    public Integer getOpen() {
-        return open;
-    }
-
-    public void setOpen(Integer open) {
-        this.open = open;
-    }
-    public Integer getEnableCache() {
-        return enableCache;
-    }
-
-    public void setEnableCache(Integer enableCache) {
-        this.enableCache = enableCache;
-    }
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-    public Integer getKotlin() {
-        return kotlin;
-    }
-
-    public void setKotlin(Integer kotlin) {
-        this.kotlin = kotlin;
-    }
-    public Integer getSwagger2() {
-        return swagger2;
-    }
-
-    public void setSwagger2(Integer swagger2) {
-        this.swagger2 = swagger2;
-    }
-    public Integer getActiveRecord() {
-        return activeRecord;
-    }
-
-    public void setActiveRecord(Integer activeRecord) {
-        this.activeRecord = activeRecord;
-    }
-    public Integer getBaseResultMap() {
-        return baseResultMap;
-    }
-
-    public void setBaseResultMap(Integer baseResultMap) {
-        this.baseResultMap = baseResultMap;
-    }
-    public String getDateType() {
-        return dateType;
-    }
-
-    public void setDateType(String dateType) {
-        this.dateType = dateType;
-    }
-    public Integer getBaseColumnList() {
-        return baseColumnList;
-    }
-
-    public void setBaseColumnList(Integer baseColumnList) {
-        this.baseColumnList = baseColumnList;
-    }
-    public String getEntityName() {
-        return entityName;
-    }
-
-    public void setEntityName(String entityName) {
-        this.entityName = entityName;
-    }
-    public String getMapperName() {
-        return mapperName;
-    }
-
-    public void setMapperName(String mapperName) {
-        this.mapperName = mapperName;
-    }
-    public String getXmlName() {
-        return xmlName;
-    }
-
-    public void setXmlName(String xmlName) {
-        this.xmlName = xmlName;
-    }
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-    public String getServiceImplName() {
-        return serviceImplName;
-    }
-
-    public void setServiceImplName(String serviceImplName) {
-        this.serviceImplName = serviceImplName;
-    }
-    public String getControllerName() {
-        return controllerName;
-    }
-
-    public void setControllerName(String controllerName) {
-        this.controllerName = controllerName;
-    }
-    public Integer getIdType() {
-        return idType;
-    }
-
-    public void setIdType(Integer idType) {
-        this.idType = idType;
-    }
-    public LocalDateTime getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
-    }
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
-    }
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
-    }
+    private Boolean deleted;
 
     public static final String ID = "id";
+
+    public static final String GLOBALCONFIGNAME = "globalConfigName";
 
     public static final String OUTPUTDIR = "outputDir";
 
@@ -345,33 +193,4 @@ public class GlobalConfigEntity implements Serializable {
     public static final String VERSION = "version";
 
     public static final String ISDELETED = "isDeleted";
-
-    @Override
-    public String toString() {
-        return "GlobalConfigEntity{" +
-            "id=" + id +
-            ", outputDir=" + outputDir +
-            ", fileOverride=" + fileOverride +
-            ", open=" + open +
-            ", enableCache=" + enableCache +
-            ", author=" + author +
-            ", kotlin=" + kotlin +
-            ", swagger2=" + swagger2 +
-            ", activeRecord=" + activeRecord +
-            ", baseResultMap=" + baseResultMap +
-            ", dateType=" + dateType +
-            ", baseColumnList=" + baseColumnList +
-            ", entityName=" + entityName +
-            ", mapperName=" + mapperName +
-            ", xmlName=" + xmlName +
-            ", serviceName=" + serviceName +
-            ", serviceImplName=" + serviceImplName +
-            ", controllerName=" + controllerName +
-            ", idType=" + idType +
-            ", createAt=" + createAt +
-            ", updateAt=" + updateAt +
-            ", version=" + version +
-            ", isDeleted=" + isDeleted +
-        "}";
-    }
 }

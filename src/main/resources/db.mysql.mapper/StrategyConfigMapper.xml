@@ -5,7 +5,8 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.tengchao.codegenerator.core.entity.StrategyConfigEntity">
         <id column="id" property="id" />
-        <result column="isCapitalMode" property="isCapitalMode" />
+        <result column="strategyConfigname" property="strategyConfigname" />
+        <result column="isCapitalMode" property="capitalMode" />
         <result column="skipView" property="skipView" />
         <result column="naming" property="naming" />
         <result column="columnNaming" property="columnNaming" />
@@ -37,12 +38,12 @@
         <result column="createAt" property="createAt" />
         <result column="updateAt" property="updateAt" />
         <result column="version" property="version" />
-        <result column="isDeleted" property="isDeleted" />
+        <result column="isDeleted" property="deleted" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, isCapitalMode, skipView, naming, columnNaming, tablePrefix, fieldPrefix, superEntityClass, superEntityColumns, superMapperClass, superServiceClass, superServiceImplClass, superControllerClass, include, exclude, entitySerialVersionUID, entityColumnConstant, entityBuilderModel, entityLombokModel, entityBooleanColumnRemoveIsPrefix, restControllerStyle, controllerMappingHyphenStyle, entityTableFieldAnnotationEnable, versionFieldName, logicDeleteFieldName, tableFillList, enableSqlFilter, likeTable, notLikeTable, isCapitalModeNaming, createAt, updateAt, version, isDeleted
+        id, strategyConfigname, isCapitalMode, skipView, naming, columnNaming, tablePrefix, fieldPrefix, superEntityClass, superEntityColumns, superMapperClass, superServiceClass, superServiceImplClass, superControllerClass, include, exclude, entitySerialVersionUID, entityColumnConstant, entityBuilderModel, entityLombokModel, entityBooleanColumnRemoveIsPrefix, restControllerStyle, controllerMappingHyphenStyle, entityTableFieldAnnotationEnable, versionFieldName, logicDeleteFieldName, tableFillList, enableSqlFilter, likeTable, notLikeTable, isCapitalModeNaming, createAt, updateAt, version, isDeleted
     </sql>
 
 </mapper>

@@ -1,10 +1,13 @@
 package cn.tengchao.codegenerator.core.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.Version;
+
 import java.io.Serializable;
 
 /**
@@ -22,6 +25,9 @@ public class DataSourceConfigEntity implements Serializable {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
+
+    @TableField("dataSourceConfigName")
+    private String dataSourceConfigName;
 
     /**
      * 数据库类型
@@ -62,10 +68,11 @@ public class DataSourceConfigEntity implements Serializable {
     @TableField("updateAt")
     private LocalDateTime updateAt;
 
+    @Version
     private Integer version;
 
     @TableField("isDeleted")
-    private Integer isDeleted;
+    private Boolean deleted;
 
     public Integer getId() {
         return id;
@@ -73,6 +80,13 @@ public class DataSourceConfigEntity implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    public String getDataSourceConfigName() {
+        return dataSourceConfigName;
+    }
+
+    public void setDataSourceConfigName(String dataSourceConfigName) {
+        this.dataSourceConfigName = dataSourceConfigName;
     }
     public String getDbType() {
         return dbType;
@@ -137,15 +151,17 @@ public class DataSourceConfigEntity implements Serializable {
     public void setVersion(Integer version) {
         this.version = version;
     }
-    public Integer getIsDeleted() {
-        return isDeleted;
+    public Boolean getDeleted() {
+        return deleted;
     }
 
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 
     public static final String ID = "id";
+
+    public static final String DATASOURCECONFIGNAME = "dataSourceConfigName";
 
     public static final String DBTYPE = "dbType";
 
@@ -171,6 +187,7 @@ public class DataSourceConfigEntity implements Serializable {
     public String toString() {
         return "DataSourceConfigEntity{" +
             "id=" + id +
+            ", dataSourceConfigName=" + dataSourceConfigName +
             ", dbType=" + dbType +
             ", schemaName=" + schemaName +
             ", url=" + url +
@@ -180,7 +197,7 @@ public class DataSourceConfigEntity implements Serializable {
             ", createAt=" + createAt +
             ", updateAt=" + updateAt +
             ", version=" + version +
-            ", isDeleted=" + isDeleted +
+            ", deleted=" + deleted +
         "}";
     }
 }

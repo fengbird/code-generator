@@ -41,3 +41,8 @@ server:
       pattern: "%h %l %u %t %r %s %b %D"
 mybatis-plus:
   mapper-locations: classpath*:db/mysql/mapper/**/*.xml
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0

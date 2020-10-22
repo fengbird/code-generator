@@ -1,10 +1,10 @@
 package cn.tengchao.codegenerator.core.controller;
 
 
-import cn.tengchao.codegenerator.core.entity.PackageConfigEntity;
 import cn.tengchao.codegenerator.core.entity.StrategyConfigEntity;
-import cn.tengchao.codegenerator.core.service.PackageConfigService;
+import cn.tengchao.codegenerator.core.entity.SummaryConfigEntity;
 import cn.tengchao.codegenerator.core.service.StrategyConfigService;
+import cn.tengchao.codegenerator.core.service.SummaryConfigService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,35 +19,40 @@ import java.util.List;
 
 /**
  * <p>
- * 策略配置项 前端控制器
+ * 汇总配置 前端控制器
  * </p>
  *
  * @author ZhaoTengchao
  * @since 2020-10-21
  */
 @RestController
-@RequestMapping("/core/strategy-config")
+@RequestMapping("/core/summary-config")
 @AllArgsConstructor
-public class StrategyConfigController {
-    private final StrategyConfigService strategyConfigService;
+public class SummaryConfigController {
+    private final SummaryConfigService summaryConfigService;
 
     @GetMapping
-    public List<StrategyConfigEntity> list() {
-        return strategyConfigService.list();
+    public List<SummaryConfigEntity> list() {
+        return summaryConfigService.list();
     }
 
     @PostMapping
-    public void save(StrategyConfigEntity entity) {
-        strategyConfigService.save(entity);
+    public void save(SummaryConfigEntity entity) {
+        summaryConfigService.save(entity);
     }
 
     @PutMapping
-    public void update(StrategyConfigEntity entity) {
-        strategyConfigService.updateById(entity);
+    public void update(SummaryConfigEntity entity) {
+        summaryConfigService.updateById(entity);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
-        strategyConfigService.removeById(id);
+        summaryConfigService.removeById(id);
+    }
+
+    @GetMapping("/execute/{id}")
+    public void execute(@PathVariable("id") Integer id) {
+        summaryConfigService.executeById(id);
     }
 }

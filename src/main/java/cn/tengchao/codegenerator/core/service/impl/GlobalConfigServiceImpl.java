@@ -17,4 +17,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class GlobalConfigServiceImpl extends ServiceImpl<GlobalConfigMapper, GlobalConfigEntity> implements GlobalConfigService {
 
+    @Override
+    public int deleteById(Integer id) {
+        GlobalConfigEntity entity = new GlobalConfigEntity();
+        entity.setId(id);
+//        return baseMapper.deleteByIdWithFill(entity);
+        return baseMapper.deleteById(id);
+    }
 }
