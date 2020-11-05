@@ -1,7 +1,10 @@
 package cn.tengchao.codegenerator.core.service;
 
 import cn.tengchao.codegenerator.core.entity.SummaryConfigEntity;
+import cn.tengchao.codegenerator.core.vo.AllConfigVo;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SummaryConfigService extends IService<SummaryConfigEntity> {
     void executeById(Integer id);
+    AllConfigVo getDetailConfigById(Integer id);
 }

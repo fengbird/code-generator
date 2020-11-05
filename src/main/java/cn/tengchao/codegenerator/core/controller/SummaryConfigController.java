@@ -5,6 +5,7 @@ import cn.tengchao.codegenerator.core.entity.StrategyConfigEntity;
 import cn.tengchao.codegenerator.core.entity.SummaryConfigEntity;
 import cn.tengchao.codegenerator.core.service.StrategyConfigService;
 import cn.tengchao.codegenerator.core.service.SummaryConfigService;
+import cn.tengchao.codegenerator.core.vo.AllConfigVo;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,5 +55,10 @@ public class SummaryConfigController {
     @GetMapping("/execute/{id}")
     public void execute(@PathVariable("id") Integer id) {
         summaryConfigService.executeById(id);
+    }
+
+    @GetMapping("/get/all/{id}")
+    public AllConfigVo getDetailConfigById(@PathVariable("id") Integer id) {
+        return summaryConfigService.getDetailConfigById(id);
     }
 }

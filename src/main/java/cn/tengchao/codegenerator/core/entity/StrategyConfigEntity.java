@@ -105,16 +105,6 @@ public class StrategyConfigEntity implements Serializable {
     private String superControllerClass;
 
     /**
-     * 需要包含的表名（与exclude二选一配置），@since 3.3.0 正则匹配不再支持,请使用{@link #setLikeTable(LikeTable)}}
-     */
-    private String include;
-
-    /**
-     * 需要排除的表名@since 3.3.0 正则匹配不再支持,请使用{@link #setNotLikeTable(LikeTable)}}
-     */
-    private String exclude;
-
-    /**
      * 实体是否生成 serialVersionUID
      */
     @TableField("entitySerialVersionUID")
@@ -244,10 +234,6 @@ public class StrategyConfigEntity implements Serializable {
     public static final String SUPERSERVICEIMPLCLASS = "superServiceImplClass";
 
     public static final String SUPERCONTROLLERCLASS = "superControllerClass";
-
-    public static final String INCLUDE = "include";
-
-    public static final String EXCLUDE = "exclude";
 
     public static final String ENTITYSERIALVERSIONUID = "entitySerialVersionUID";
 

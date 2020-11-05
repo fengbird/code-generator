@@ -31,12 +31,6 @@ public class GlobalConfigEntity implements Serializable {
     private String globalConfigName;
 
     /**
-     * 生成文件的输出目录【默认 D 盘根目录】
-     */
-    @TableField("outputDir")
-    private String outputDir;
-
-    /**
      * 是否覆盖已有文件
      */
     @TableField("fileOverride")
@@ -149,8 +143,6 @@ public class GlobalConfigEntity implements Serializable {
     public static final String ID = "id";
 
     public static final String GLOBALCONFIGNAME = "globalConfigName";
-
-    public static final String OUTPUTDIR = "outputDir";
 
     public static final String FILEOVERRIDE = "fileOverride";
 

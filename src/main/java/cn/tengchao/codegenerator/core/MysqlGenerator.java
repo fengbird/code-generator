@@ -75,7 +75,7 @@ public class MysqlGenerator {
                         .setDriverName(Driver.class.getName())
                         .setUsername("root")
                         .setPassword("root")
-                        .setUrl("jdbc:mysql://localhost:3306/code_generator?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true")
+                        .setUrl("jdbc:mysql://localhost:3306/codecamp?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true")
         ).setStrategy(
                 // 策略配置
                 new StrategyConfig()
@@ -83,7 +83,7 @@ public class MysqlGenerator {
                         // .setDbColumnUnderline(true)//全局下划线命名
                         //.setTablePrefix("tbl_")// 此处可以修改为您的表前缀
                         .setNaming(NamingStrategy.underline_to_camel)// 表名生成策略
-                         .setInclude("summary_config") // 需要生成的表
+                         .setInclude("tbl_work_record") // 需要生成的表
                         // .setExclude(new String[]{"test"}) // 排除生成的表
                         // 自定义实体父类
                         // .setSuperEntityClass("com.baomidou.demo.TestEntity")

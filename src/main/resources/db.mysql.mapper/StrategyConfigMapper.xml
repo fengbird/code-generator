@@ -18,8 +18,6 @@
         <result column="superServiceClass" property="superServiceClass" />
         <result column="superServiceImplClass" property="superServiceImplClass" />
         <result column="superControllerClass" property="superControllerClass" />
-        <result column="include" property="include" />
-        <result column="exclude" property="exclude" />
         <result column="entitySerialVersionUID" property="entitySerialVersionUID" />
         <result column="entityColumnConstant" property="entityColumnConstant" />
         <result column="entityBuilderModel" property="entityBuilderModel" />
@@ -43,7 +41,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, strategyConfigname, isCapitalMode, skipView, naming, columnNaming, tablePrefix, fieldPrefix, superEntityClass, superEntityColumns, superMapperClass, superServiceClass, superServiceImplClass, superControllerClass, include, exclude, entitySerialVersionUID, entityColumnConstant, entityBuilderModel, entityLombokModel, entityBooleanColumnRemoveIsPrefix, restControllerStyle, controllerMappingHyphenStyle, entityTableFieldAnnotationEnable, versionFieldName, logicDeleteFieldName, tableFillList, enableSqlFilter, likeTable, notLikeTable, isCapitalModeNaming, createAt, updateAt, version, isDeleted
+        id, strategyConfigname, isCapitalMode, skipView, naming, columnNaming, tablePrefix, fieldPrefix, superEntityClass, superEntityColumns, superMapperClass, superServiceClass, superServiceImplClass, superControllerClass, entitySerialVersionUID, entityColumnConstant, entityBuilderModel, entityLombokModel, entityBooleanColumnRemoveIsPrefix, restControllerStyle, controllerMappingHyphenStyle, entityTableFieldAnnotationEnable, versionFieldName, logicDeleteFieldName, tableFillList, enableSqlFilter, likeTable, notLikeTable, isCapitalModeNaming, createAt, updateAt, version, isDeleted
     </sql>
 
 </mapper>

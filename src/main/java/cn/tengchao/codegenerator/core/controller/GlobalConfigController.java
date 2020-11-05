@@ -3,8 +3,6 @@ package cn.tengchao.codegenerator.core.controller;
 
 import cn.tengchao.codegenerator.core.entity.GlobalConfigEntity;
 import cn.tengchao.codegenerator.core.service.GlobalConfigService;
-import com.sun.tools.internal.ws.wsdl.framework.GlobalEntity;
-import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
